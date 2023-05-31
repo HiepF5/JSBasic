@@ -19,7 +19,74 @@
 // // var a = 1+ 2;
 // // console.log(a);
 // // var fullName ='Hiep Nguyen \'hiep\'';// backslash
+var st="d=3";
+console.log(st.split('='));
+var nums = [3, 3];
+var target = 6;
 
+var twoSum = function (nums, target) {
+  var pair = new Object();
+  for (var i = 0; i <= nums.length; i++) {
+    if (pair[target - nums[i]] !== undefined) return [pair[target - nums[i]], i];
+    pair[nums[i]] = i;
+  }
+};
+console.log(twoSum(nums, target));
+
+var s ="IV";
+var romanToInt = function(s) {
+  var pair = {
+    I: 1,
+    V: 5,
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
+  };
+  //s =s + "M";
+  var sum=0;
+  for(var i=0;i<s.length;i++){
+
+    if(pair[s[i]]<pair[s[i+1]])sum-=pair[s[i]];
+    else sum+=pair[s[i]];
+  }
+  console.log(sum);
+  return sum;
+};
+console.log(romanToInt(s));
+
+// var twoSum = function (nums, target) {
+//   var mySet = new Set();
+//   var mySetid = new Set();
+//   var s=[];
+//   for (var a of nums)
+//     if (mySet.has(target - a) == false) {
+//         s[]
+//       mySet.add(a);
+//       mySetid.add(nums.indexOf(a));
+//     } else {
+//     var myArray = Array.from(mySet); // Chuyển đổi Set thành mảng
+//         var index2 = myArray.indexOf(target - a);
+
+//       var index = nums.indexOf(a);
+//       var s = "[" + index2 + "," + index + "]";
+//       //console.log("[" + index2 + "," + index + "]");
+//       console.log(s);
+//       return s;
+//     }
+// };
+// console.log(twoSum(nums, target));
+
+// var romanToInt = function(s) {
+//     var kh=[I,V,X,L,C,D,M];
+//     var gt=[1,5,10,50,100,500,1000];
+//     var s=0;
+//     for (var i = 0; i < s.length; i++)
+//     {
+//         if(gt[kh.indexOf()==])
+//     }
+// };
 // // console.log(fullName);
 
 // // console.log(fullName.length);
@@ -45,18 +112,10 @@
 // // var oNumber = new Number(9); // tranh su dung
 // // console.log(age.toString());
 // // console.log(pi.toFixed(2));
-// // // Sử dụng mảng khi nao :
-// // var languages = [
-// //     'javascrip',
-// //     'php',
-// //     'ruby',
-// // ];
-// // var languages2 = [
-// //     'javascripsss',
-// //     'phssp',
-// //     'rubssy',
-// // ];
-// // console.log(Array.isArray(languages));
+// Sử dụng mảng khi nao :
+// var languages = ["javascrip", "php", "ruby"];
+// var languages2 = ["javascripsss", "phssp", "rubssy"];
+//console.log(Array.isArray(languages));
 // // // Join array
 // // //
 // /*
@@ -64,23 +123,44 @@
 // push thêm cuối
 // shift Xóa đầu
 // unshift thêm đầu
-// splicing 
-// concat nối array 
+// splicing
+// concat nối array
 // slicing  cắt
 //  */
 // // languages.splice(1,2, 'Dart');
 // // console.log(languages);
-// // console.log(languages.concat(languages2))
+console.log(languages.concat(languages2));
 // // function writeLog(message){
 // //     console.log(message)
 // // }
-// // writeLog(123);
-// // function writeLogg(){
-// //     var myS='';
-// //     for(var param of arguments){
-// //         myS += `${param} - `
-// //     }
-// //     console.log(myS);
+// writeLog(123);
+// function writeLogg(){
+//     var myS='';
+//     for(var param of arguments){
+//         myS += `${param} - `
+//     }
+//     console.log(myS);
+//\
+// Arr.map(item => #${item}).join()
+// var name = "John";
+// var greeting = "Welcome " + name + "!";
+// console.log(greeting);
+// var arr = ["jav", "dienvien", "blabla"];
+// var str = arr.join("#");
+// var str2 = str2.concat(arr);
+// concat
+// var str =  "#" + str
+// console.log(str2);
+
+// function arrtostring() {
+//   var s = "";
+//   for (var a of arr) {
+//     s += "#" + a;
+//   }
+//   return s;
+// };
+// console.log(arrtostring());
+
 // // }
 // // writeLogg('dad','asdas','asdas');
 // // var isConfirm =  confirm('message');
@@ -189,7 +269,7 @@
 //   };
 // });
 // console.log(newCoures);
-// //reduce() 
+// //reduce()
 // function coinHandler(accumulator,currentValue,currentIndex,originArray)
 // // var totalCoin = courses.reduce(coinHandler, 0);
 // var course = ['JV','PHP','D'];
@@ -216,8 +296,6 @@
 // console.log(headingElement.textContent);
 // headingElement.innerText= ' New he';
 // console.log(headingElement.textContent);
-
-
 
 // var boxElement = document.querySelector('.heading');
 // console.log(boxElement.style);
@@ -253,14 +331,12 @@
 // }
 
 // }
-var textElement = document.querySelector('input[type="text"]');
-textElement.onchange = function(e)
-{
-    console.log(e.target.value);
-}
-console.log(textElement);
-//preventDefault loai bo mac dinh
-//stop Propagation xoa noi boi
-// dom event lang nghe 
-
-
+// var textElement = document.querySelector('input[type="text"]');
+// textElement.onchange = function(e)
+// {
+//     console.log(e.target.value);
+// }
+// console.log(textElement);
+// //preventDefault loai bo mac dinh
+// //stop Propagation xoa noi boi
+// // dom event lang nghe
